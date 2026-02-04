@@ -1,0 +1,11 @@
+# Gaussian splat files (large binary assets)
+*.splat
+*.ply
+
+# TouchDesigner backup files
+*.toe.autosave
+*.toe~
+
+# OS files
+.DS_Store
+Thumbs.db

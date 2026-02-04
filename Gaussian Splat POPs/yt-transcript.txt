@@ -1,0 +1,603 @@
+Hi there everyone and welcome to another 
+ touch designer tutorial. Today we're 
+ going to look at gouge and splatting 
+ using the new pop family. I'm going to 
+ preface this tutorial by saying that I 
+ am using the experimental release 
+ 202531310 
+ which was released just a couple of days 
+ ago. I'm using it on a Mac but it should 
+ also work on a PC. And what's really 
+ great about this release is as we get 
+ closer to having a stable release, we're 
+ getting a lot of updates that are really 
+ great. Um, I haven't been able to get 
+ gouge and splats running super stably 
+ using pops up to this point. So, this 
+ has worked a lot more stably and 
+ effective for me, which I'm super happy 
+ about. And what we're going to do today 
+ is go through the gaus and splat 
+ component as well as looking into some 
+ of the guts of this. I'm going to make 
+ this base file where you can just load 
+ and look at Gaus and Splats available 
+ for free on my Patreon. You just have to 
+ sign up to be a free member and there'll 
+ be some added extras where we actually 
+ manipulate the guts which will be 
+ available on the component tier. So, 
+ let's start out by looking at the 
+ gausian splat component. 
+ And this is a component that has been 
+ modified from that original Tim 
+ Garrettson component to work in TOPS. It 
+ was made available via Touch Designer as 
+ part of their beta example package. And 
+ I've made some additions as well, which 
+ we can see here in this additional 
+ parameters. 
+ So starting out, we have the basic 
+ stuff. We have the render resolution. We 
+ also have this gausian splat.pl. 
+ So, this is where we load in a ply file. 
+ Let's do another 
+ image. And we can see that that is 
+ loading in really quickly, which is 
+ great. 
+ We can see that there's some cropping 
+ going on here as well, which we'll sort 
+ out later. But for now, I'll backtrack 
+ to my older file. So, it's really nice 
+ and quick moving between gouge and splat 
+ files. we have this ability to switch 
+ between a ply format and an SPZ format. 
+ So this gives us the ability to load in 
+ different types of files. So we can do 
+ SPZ or PLY depending on your preference 
+ there. So that's a useful update if 
+ you're using different types of files. 
+ Again, back to the PLY. 
+ And we also have this reload. So 
+ basically, if you're loading in 
+ something that's not loaded, right, you 
+ can just click that pulse. It should 
+ reload that file. We can turn on and off 
+ our auto sort. So this should all just 
+ be kind of left as is by default. On top 
+ of that, we have translate. 
+ So that will translate our point cloud 
+ in 3D space 
+ and rotation. 
+ So, we can rotate as well. I have this 
+ set up with a camera viewport. So, we 
+ can also just rotate and hold middle 
+ mouse to zoom in and out and right click 
+ and drag to drag around. 
+ We also can control the uniform scale. 
+ So how big our point cloud is the splat 
+ size. So how big each of these 
+ individual splats are. So basically look 
+ at this. It's a point right now. And as 
+ I bring that up, it becomes more and 
+ more elongated in that classic splat 
+ shape. 
+ And we have our alpha threshold. And 
+ this allows us to change the alpha 
+ blend. And we can see that things become 
+ a lot more harsh as we move in. So 
+ that's kind of a nice 
+ little slider to have there as well. 
+ The additions that I have made are down 
+ here. As we know, gouge and splat files 
+ can be quite intensive on our machines. 
+ So I have this thin random added in. So 
+ this basically allows us to kind of 
+ randomly sample our point clouds so 
+ we're not kind of crashing our computer 
+ if we have massive massive point clouds. 
+ And we can go really really sparse or we 
+ can go and have everything there. I've 
+ also set up this boundary delete. So we 
+ can see here that basically everything 
+ is cropped outside of that certain 
+ boundary. I'm using a length parameter 
+ to basically crop everything that's 
+ above a certain distance. And what we 
+ can do here is we can change this. So as 
+ I move this, we see more or less of that 
+ gouge and splat. It's basically a way of 
+ just cropping it. So we're kind of 
+ seeing the useful parts that we actually 
+ want to see. And on top of that, I have 
+ this boundary center. So this is going 
+ to define where the center of that 
+ boundary is. So basically that central 
+ point is what will get the distance 
+ around and delete outside of that 
+ boundary. So let's move this around. We 
+ can see that that boundary is moving. 
+ This is going to move this up and down. 
+ So we can see it kind of scans through 
+ the shape. So we want that normally at 
+ zero for the Y. But for these ones, 
+ for the Z and the X, it will move it 
+ left and right. And then you can 
+ position that to whatever makes sense 
+ for you. 
+ Bring that down. And I want this to be 
+ centered. 
+ That looks more or less right. 
+ No, far off. Sometimes I find these 
+ angles can be weird. 
+ Okay. 
+ Not going to be forensic about that, but 
+ that's that's pretty good. So, these are 
+ the options that you have for working 
+ with gouge and splats just through this 
+ component in this example file. And I'm 
+ going to make this example file 
+ available for free on my Patreon. You 
+ just have to subscribe as a free member. 
+ Let's go inside and take a look at how 
+ we can make this do some more 
+ interesting things. 
+ This is the guts of the component. So 
+ this is essentially an earlier pipeline 
+ that now isn't used for getting the data 
+ from polycam and displaying that. But 
+ basically what we have here is we have 
+ our point file in we're putting a bunch 
+ of stuff together into these attributes 
+ and then we're visualizing it down the 
+ line here using this gouge and splat 
+ GLSL vertex shader. And basically what 
+ we're putting in in terms of the visual 
+ is this point cloud with a bunch of 
+ attributes attached. And we can see what 
+ those attributes are. Let's take that 
+ into a pop to that. 
+ And so we can see we've got our color, 
+ our length which is added by me, the 
+ rotation and the scale. So quite sparse 
+ when you actually think about all the 
+ data that is attached to a gaus and 
+ splat initially. 
+ We can see here that we have all of 
+ these fields that we could be working 
+ with. So the touch designer team have 
+ done some great work making this much 
+ more streamlined and we can see that all 
+ this stuff has been running pretty fast 
+ on my machine about 50 to 60 fps which 
+ is great. 
+ This is the section where we actually 
+ can make changes. So, we're basically 
+ looking to make changes in this section 
+ here where everything has been defined 
+ and is being output. And we're basically 
+ just making changes on the end display. 
+ And what I've got here is I've got my 
+ delete. And so that delete has been 
+ paired with a math mix. This is one of 
+ my favorite kind of little tricks in 
+ touch designer. So in my math mix, I set 
+ my central point in the uniform section 
+ as a float three. So I've got my XYZ for 
+ my central point. And then I perform a 
+ subtraction operation. So I take that 
+ center away from the position. So that 
+ central point is going to subtract the 
+ position of each individual point. And 
+ that's going to give me the beginning of 
+ my length. And then I'm going to use a 
+ length operation to access the length. 
+ And what this really means is that it 
+ gives me a value for each point in terms 
+ of how far away it is from my central 
+ area that I've defined. So we can see 
+ here that we have this very clear 
+ boundary. And that's basically anything 
+ that is over that distance that we've 
+ defined is going to be deleted. And that 
+ just allows us to pop that into a 
+ delete. And right here we can see we've 
+ got the larger than operation. And if I 
+ flip this around, we can see that 
+ instead of having the center shown, 
+ we're cutting out the center. So, this 
+ is a really handy little trick that I 
+ use all the time for deleting things 
+ that are outside of a certain boundary 
+ or even just making things have a kind 
+ of a ramp element away from the center. 
+ So, I find this to be a very useful 
+ little kind of um touch designer pop 
+ trick with this math mix to get the 
+ length and then the delete. What we can 
+ also see is I have this section here 
+ which has a bunch of stuff going on 
+ inside that I've kind of encapsulated 
+ for just making this a bit easier to 
+ look at. And if I add that to my cooking 
+ window and connect that up there, we can 
+ see that I'm adding in a couple things 
+ here. So, we're adding in some noise, 
+ but we can also add in a trail. And 
+ what's really fun about this is the 
+ trail is actually going to be rendered 
+ by the gaus and splat renderer. And it's 
+ already got all the attributes of each 
+ of these splats. Um, but it will then 
+ just render that as a trail or a copied 
+ series of particles. And I really like 
+ this effect where it's sort of the 
+ hybrid with the gouge and splat and 
+ these sort of ephemeral trails. Let's go 
+ into this base and I'm just going to 
+ delete all of this stuff 
+ and we're going to build some stuff from 
+ scratch. 
+ Because we're working with sort of 
+ largeish point clouds, we're going to 
+ have to add in quite a lot of noise to 
+ sort of see a difference. So let's move 
+ that up to around one. And let's turn 
+ that period up something high like five 
+ or seven. 
+ Can fiddle with that exponent. 
+ And even turn up the noise to something 
+ like two even higher than one. 
+ If we animate it with our old favorite 
+ command absime docs times 0.1 
+ we can see that we are animating the 
+ noise 
+ and I'm even going to make this 
+ bigger because it's a very big file and 
+ then you get this sort of nice noise 
+ displacement effect. 
+ So that's an early stage very simple 
+ technique that you can do. Other things 
+ that are equally simple but also 
+ effective are you can add in a twist. I 
+ really like this effect on a point cloud 
+ like this. 
+ So with the twist you can play with the 
+ strength, 
+ can play with the rolloff and you can 
+ change the axes that you're applying 
+ that to. The y- axis is quite fun 
+ because that twirls it around the 
+ central point. And we can also change if 
+ we're bending it, if we're adding in 
+ these different um types of controls, 
+ although not all of them work. Twist is 
+ very robust 
+ and that's a really nice effect. You can 
+ also play with this pivot to change 
+ various factors and consider animating 
+ these using LFOs or abs time do seconds. 
+ I'm going to bring this down so it's 
+ very very minimal. And with all of these 
+ techniques, something that's worth 
+ trying out is adding in a feedback loop. 
+ And what this will allow us to do is to 
+ basically create small changes to our 
+ system and then add that iteratively. So 
+ the feedback loop is going to be the sum 
+ of all its parts here. So, we can't 
+ really see that twist, but if we add in 
+ a null and drag that back onto the 
+ feedback, 
+ turn up this twist value, 
+ we see that we have this sort of 
+ twirling whirlwind made out of all of 
+ our points 
+ and press start. And we'll keep that 
+ going. 
+ We're going to add in a keyboard in 
+ bring that up to start. So now whenever 
+ we press that, it's going to reset that 
+ feedback loop. 
+ Something else I really like to do is I 
+ like to mix between multiple inputs in 
+ this feedback. And this allows it to 
+ have some of the initial signal coming 
+ through as well. To do that, I'm going 
+ to add in a math mix. 
+ I'm going to set the operation to mix 
+ ABC and I'm going to take the in. So 
+ basically the unprocessed signal and I'm 
+ going to put that in my second inlet of 
+ the math mix. And now what I'm going to 
+ do is I'm going to say P is my scope A 
+ input 
+ in 1 P is my scope B input. And then for 
+ the time being we can define a value. So 
+ zero is going to be the processed 
+ version and one is going to be the 
+ unprocessed version and as you move down 
+ you will start getting 
+ stronger and stronger versions. So you 
+ have to go really low to really see that 
+ start coming through because obviously 
+ the feedback loop is this iterative 
+ process. So when we are adding stuff 
+ that is closer to the original signal 
+ it's going to take its Q from that. 
+ So, what we want to do rather than 
+ having a static value is add in 
+ something that's going to be calculated 
+ for each point. And this could be 
+ anything you like, but in this instance, 
+ I'm going to go for something really 
+ simple and add in a pattern. 
+ We're going to see something's happening 
+ right off the bat. Not ideal. What I'm 
+ going to do is change my output 
+ attribute scope to mix. 
+ We can see it goes back to its original 
+ form. And under this math mix, I can go 
+ in here and choose in one mix as my 
+ scope C. 
+ Okay. 
+ And now let's tweak this a little bit. 
+ When we're working with sign curves, 
+ just make sure that the map low to high 
+ is minus one to one. 
+ And let's animate that phase. 
+ Let's play a bit more to make this more 
+ exciting. 
+ Slower is always good. 
+ And let's actually change this high 
+ point. 
+ There we go. 
+ So this is something where you can just 
+ start being creative. You could also add 
+ in say 
+ more obvious twisting. 
+ Okay, we have an effect here. It's not 
+ particularly finessed, but this gives 
+ you the idea of what we can do as we 
+ start playing with these different mix 
+ modes. Something else we could do is 
+ instead of a pattern, we could add in a 
+ noise. 
+ And I'm going to use in my scope C, I'll 
+ just use noise in one noise. 
+ Once the noise is added, I'm going to 
+ turn my offset up to one. And then we 
+ can start playing with that amplitude 
+ value. 
+ Remember that one is our unprocessed 
+ point cloud and anything less than one 
+ is mixing towards that zero value which 
+ is our processed point cloud. And 
+ if we turn down that offset a little 
+ bit, we can add in some animation to the 
+ transform. 
+ And let's change the period on that 
+ noise. That's nice. 
+ Oh yeah, that's a much nicer effect. 
+ Let's even change that period up to 12. 
+ turn down those harmonics. 
+ And instead of the twist, what we could 
+ do is we could add in a noise that's 
+ just going to displace the point cloud. 
+ So, we're going to turn up the noise 
+ value 
+ and we're going to turn up the period. 
+ So, then this is just allowing certain 
+ segments through 
+ based on this noise value here. 
+ And as we turn this up and this down, it 
+ can become more noisy. So this is a nice 
+ way of kind of controlling what elements 
+ of your sketch are going to be sort of 
+ highlighted for these manipulations. 
+ And if you fancy it, you can also just 
+ add back that twist. Or actually, we 
+ already have that twist. So, we can do 
+ that, but having it a little bit lower 
+ or even changing the axes. 
+ And this allows you to have something 
+ that you can be really, really creative 
+ with. 
+ Apologies, my screen capture just died, 
+ so I'm restarting it. But basically, the 
+ gist of this is we can just use these 
+ pop operations to essentially play 
+ around. And really, really simply here, 
+ we're not doing anything fancy. We're 
+ just mixing with a a value here. So, it 
+ could be a static value that you put in. 
+ Remember that zero is our 
+ processed kind of affected signal. So 
+ it's looking really crazy because we've 
+ put in some pretty big values there. And 
+ the closer we are to one, we're getting 
+ to our unprocessed signal. But what 
+ we're doing by putting in a secondary 
+ signal, so like this in one noise, is 
+ we're allowing 
+ these signals to sort of meld between 
+ the two. So we're not doing one or the 
+ other, but with this offset and 
+ amplitude combination. So if we have our 
+ offset at one, we're just outputting a 
+ value of one for every particle. But as 
+ we start moving up, we're getting 
+ different values added in there. And 
+ then that's feeding back into the 
+ system. If we turn up that period, 
+ if we even turn it up really high, 
+ you'll see that that kind of affects 
+ different parts of the point system in a 
+ more obvious way. 
+ And so you can kind of tweak all these 
+ parameters to get something that you 
+ really like. 
+ Going to maneuver this twist down a bit. 
+ And I'm going to play with this noise a 
+ little bit more. 
+ Okay. And you could think about adding 
+ attractors in or any of that kind of 
+ stuff. we've looked at previously. Um, 
+ basically working with the point data 
+ and then you get some interesting 
+ outputs. 
+ Okay, I'm liking that. The next thing I 
+ want to show you is we could add in, for 
+ example, trails for certain particles 
+ here. And I think that's a really 
+ interesting kind of effect to add in as 
+ well. But what I'm going to suggest is 
+ because there are a large number of 
+ points here. Uh we're going to filter 
+ that. 
+ So I'm going to take this into a delete 
+ that isn't going to be part of my chain. 
+ This will be a separate section. And 
+ then a null. 
+ On my delete, what I'm going to do is 
+ I'm going to go to the thin tab and I'll 
+ turn on enabled. 
+ And I'm just going to drag that up 
+ really quite high just so we have a few 
+ of these points available. 
+ And two things that we could do. One is 
+ we could add in a proximity. 
+ And this is a fun effect where we can 
+ basically connect things based on how 
+ close together they are. And in this 
+ instance, we might have to turn this up 
+ quite high. 
+ I'm going to add in 
+ an out for this so we can add this in a 
+ little bit later. 
+ Let's pop this here 
+ and then merge them together. 
+ Let's just see what this looks like on 
+ its own. 
+ And what we can see here is that 
+ basically for this in terms of the 
+ proximity it's not going to visualize 
+ those lines even if they're very very 
+ big. So in this case what we would do is 
+ we would create 
+ another geo 
+ and I want to use a line renderer on 
+ that geo. 
+ And there we go. So we can see those 
+ lines coming in. And if we add in 
+ that sort again, we can see those lines. 
+ Added into the mix. 
+ Might be interesting actually if we went 
+ back to our main pop and deleted a few 
+ of these as well. So let's go into this 
+ thin random. 
+ If you do alter things at this stage, 
+ important to remember to just repulse 
+ your network 
+ because 
+ until you reset that feedback loop, 
+ these changes are sort of just adding 
+ iteratively in that feedback loop. Like 
+ you can see the colors kind of all over 
+ the place. So just reset. 
+ So the main point cloud has been thinned 
+ out. Let's go back into our FX. 
+ Let's 
+ turn this down a little bit. Put some 
+ more. 
+ Okay, that's a nice effect. 
+ We can see that the color has sort of 
+ been taken from that point cloud and 
+ it's applied to those lines. But let's 
+ go into the line and edit some stuff. 
+ So, underline will change the color 
+ for the near and the far. So, there we 
+ go. We're now getting that full bright 
+ color, 
+ which is pretty cool. And then what you 
+ can also do is you can go in and you can 
+ alter the width, near, and far. So, 
+ let's do like one and one. And finally, 
+ if you really want to, you can go in and 
+ take a look at some of the attributes 
+ that you might have access to. 
+ So let's say we're going to scale it by 
+ the color for whatever reason. You can 
+ get these interesting effects or if you 
+ have like a particular size parameter 
+ that you want to use. So this is one 
+ option. And then the other option that I 
+ wanted to show you is this trail. Again 
+ I'm going to create another out. 
+ And again, I'll have a delete because we 
+ don't want to have lots and lots of 
+ these particles trailing. Good idea to 
+ save at this point because sometimes 
+ things glitch. And 
+ let's drag this up so we have fewer 
+ particles. And I'm going to drag this 
+ into a trail. 
+ And because we have all of the same 
+ attributes on all of these trail 
+ particles, what we should be able to see 
+ when we plug it in to our second out 
+ and then when we merge the two. 
+ So this is actually out three. Plug that 
+ into the null there. 
+ Let's reset. 
+ There might be a lot going on here. 
+ Okay, for the time being I'm just going 
+ to disable this proximity just so we can 
+ look at this other effect. 
+ Very, very nice. And now let's take a 
+ look at these trails. So, we can see 
+ that the trails have been instanced. 
+ Let's maybe make a few more of them. 
+ Yeah, that's super nice. 
+ It doesn't like when I move around, but 
+ once I have kind of set that off, it's 
+ it's quite stable. And now this should 
+ now this should if it's not going to 
+ crash on me respond to all of the same 
+ controls as this over thing here. So if 
+ I change the splat size the trail has 
+ that applied too. If I move that up to 
+ something like three the trail gets 
+ bigger. And if I change this alpha 
+ threshold that affects the trail as 
+ well. So, this is something that works 
+ kind of really nicely um just for 
+ playing around with these networks. And 
+ again, use that thin random to sort of 
+ make things either less detailed and 
+ easier on your computer or more detailed 
+ and uh potentially giving your computer 
+ a really really hard time 
+ like this where we can see it's um 
+ definitely struggling. 
+ That is a really cool effect though. 
+ Again, you can change that uniform 
+ scale. That's basically how much is 
+ going to be revealed in the scene. Or 
+ you can turn it up. Remember to repulse. 
+ And let's turn up this thing random 
+ again. 
+ So, I will make these experiments 
+ available on my Patreon under the 
+ component tier. The core of this where 
+ it's just the base gouge and splat pop, 
+ you can access if you sign up for a free 
+ member, but these experiments will be 
+ under component. I hope you have fun 
+ playing with these. And uh apologies for 
+ not making more videos sooner. I had a 
+ bad cold, so I'm just getting back into 
+ this. So, also apologies if my voice is 
+ a bit croaky and I've been snuffly, but 
+ great to uh chat with you all and more 
+ tutorials
