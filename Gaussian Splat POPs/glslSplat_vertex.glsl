@@ -1,3 +1,7 @@
+// Gaussian Splat Vertex/Fragment Shader for TouchDesigner
+// Original splat viewer by Dan Tapper (@visualcodepoetry)
+// Kinect displacement modifications for Portland Winter Lights Festival
+
 uniform vec3 uFocal;
 uniform vec3 uT;
 uniform vec3 uR;
@@ -5,9 +9,9 @@ uniform float uS;
 uniform float uScale;
 uniform float uAlphaThreshold;
 
-// Kinect displacement uniforms
-uniform sampler2D uKinectDisplace;	// RGB: flow.x, flow.y, depth (from Combine TOP)
-uniform mat4 uKinectVP;			// Kinect view-projection (world -> Kinect clip space)
+// Displacement uniforms
+uniform sampler2D uDisplaceTex;		// RGB: flow.x, flow.y, depth (from Combine TOP)
+uniform mat4 uDisplaceVP;		// view-projection matrix for displacement UV lookup (world -> clip space)
 uniform float uDisplaceStrength;	// overall displacement magnitude
 uniform float uDepthFalloff;		// depth curve: higher = faster falloff with distance
 
@@ -82,64 +86,64 @@ void main()
 	int index = instanceIndex;
 	int cameraIndex = TDCameraIndex();
 
-	vec3 pos = TDPos();
-	vec2 uv = pos.xy;
+	vec3 quadCorner = TDPos();		// xy: corner offset for billboard quad (-1 to 1)
+	vec2 uv = quadCorner.xy;
 	vec3 conic = vec3(0.);
-	vec2 ndc = vec2(0.);
+	vec2 quadExtentNDC = vec2(0.);	// how far quad corners extend from center (in NDC)
 	vec4 color = TDInstanceCustomAttrib3(index);
 
 	mat3 m = mat3(1);
-	vec3 posData = vec3(0.);
-	vec4 rotData = vec4(0.);
-	vec3 scale = vec3(0.);
-	
+	vec3 splatPos = vec3(0.);		// splat center position (local/object space)
+	vec4 splatRot = vec4(0.);		// splat rotation quaternion
+	vec3 splatScale = vec3(0.);		// splat scale (log-encoded)
+
 	if (color.a > 0.0)
 	{
-		posData = TDInstanceCustomAttrib0(index).xyz;
-		rotData = normalize(TDInstanceCustomAttrib2(index));
-		scale = TDInstanceCustomAttrib1(index).xyz;
-		m = RotScale(rotData, scale, uScale);
+		splatPos = TDInstanceCustomAttrib0(index).xyz;
+		splatRot = normalize(TDInstanceCustomAttrib2(index));
+		splatScale = TDInstanceCustomAttrib1(index).xyz;
+		m = RotScale(splatRot, splatScale, uScale);
 		mat3 sigma = transpose(m)*m;
-		vec3 cov = Covariance(posData.xyz, cameraIndex, sigma);
+		vec3 cov = Covariance(splatPos.xyz, cameraIndex, sigma);
 		float det = cov.x * cov.z - cov.y * cov.y;
 		conic = vec3(cov.z,-cov.y,cov.x)/det;
 
 		vec2 wh = 2.*uFocal.xy * uFocal.z;
-		vec2 quadwh_scr = 3.*sqrt(cov.xz);
-    	ndc = 2.*quadwh_scr / wh * smoothstep(0.0,0.1,uScale);
-   	uv = quadwh_scr * pos.xy;
+		vec2 quadExtentScreen = 3.*sqrt(cov.xz);
+		quadExtentNDC = 2.*quadExtentScreen / wh * smoothstep(0.0,0.1,uScale);
+		uv = quadExtentScreen * quadCorner.xy;
 	}
-	
+
 	else
 	{
-		posData *= 0; color *= 0;
+		splatPos *= 0; color *= 0;
 	}
-	
-	vec4 worldSpacePos = TDDeform(posData.xyz);
-	vec4 projectionSpace = TDWorldToProj(worldSpacePos);
-	projectionSpace /= projectionSpace.w;
 
-	// Kinect-driven displacement: project splat into Kinect's view,
+	vec4 worldPos = TDDeform(splatPos.xyz);
+	vec4 clipPos = TDWorldToProj(worldPos);
+	vec3 ndcPos = clipPos.xyz / clipPos.w;	// perspective divide: clip space -> NDC
+
+	// Displacement: project splat into displacement texture space,
 	// sample the flow+depth texture, offset splat center in screen space
-	vec4 kinectClip = uKinectVP * worldSpacePos;
-	if (kinectClip.w > 0.0)
+	vec4 displaceClipPos = uDisplaceVP * worldPos;
+	if (displaceClipPos.w > 0.0)
 	{
-		vec2 kinectUV = kinectClip.xy / kinectClip.w * 0.5 + 0.5;
-		if (all(greaterThanEqual(kinectUV, vec2(0.0))) &&
-			all(lessThanEqual(kinectUV, vec2(1.0))))
+		vec2 displaceUV = displaceClipPos.xy / displaceClipPos.w * 0.5 + 0.5;
+		if (all(greaterThanEqual(displaceUV, vec2(0.0))) &&
+			all(lessThanEqual(displaceUV, vec2(1.0))))
 		{
-			vec3 displace = texture(uKinectDisplace, kinectUV).rgb;
-			vec2 flow = displace.xy;		// optical flow vectors (signed, float texture)
-			float depth = displace.z;		// pedestrian depth, 0=close 1=far
+			vec3 displaceSample = texture(uDisplaceTex, displaceUV).rgb;
+			vec2 flow = displaceSample.xy;		// optical flow vectors (signed, float texture)
+			float depth = displaceSample.z;		// pedestrian depth, 0=close 1=far
 			float weight = exp(-depth * uDepthFalloff);
-			projectionSpace.xy += flow * uDisplaceStrength * weight;
+			ndcPos.xy += flow * uDisplaceStrength * weight;
 		}
 	}
 
-	projectionSpace.xy += ndc*pos.xy;
-	gl_Position = projectionSpace;
+	ndcPos.xy += quadExtentNDC * quadCorner.xy;	// expand quad corners from center
+	gl_Position = vec4(ndcPos, 1.0);
 
-	Vert.position = projectionSpace.xyz;
+	Vert.position = ndcPos;
 	Vert.color = color;
 	Vert.uv = uv;
 	Vert.conic = conic;

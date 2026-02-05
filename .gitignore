@@ -5,6 +5,8 @@
 # TouchDesigner backup files
 *.toe.autosave
 *.toe~
+**/Backup/
+*.*.toe
 
 # OS files
 .DS_Store
