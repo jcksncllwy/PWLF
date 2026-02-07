@@ -144,9 +144,16 @@ void main()
 	gl_Position = vec4(ndcPos, 1.0);
 
 	Vert.position = ndcPos;
-	Vert.color = color;
 	Vert.uv = uv;
 	Vert.conic = conic;
+
+	// Tint displaced splats based on offset direction
+	float offsetLen = length(offset);
+	if (offsetLen > 0.001) {
+		vec3 offsetDir = normalize(offset) * 0.5 + 0.5;
+		color.rgb = mix(color.rgb, offsetDir, 0.1);
+	}
+	Vert.color = color;
 }
 #endif
 
