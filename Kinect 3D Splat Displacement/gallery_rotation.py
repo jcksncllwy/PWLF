@@ -18,6 +18,7 @@ import os
 # --- Configuration ---
 GALLERY_DIR = project.folder + '/../assets/gallery'
 BLEND_DURATION = 5.0    # seconds of wall-clock time for the blend transition
+STORAGE_VERSION = 2     # bump this to force storage re-init (e.g. after loading a TD backup)
 
 # How many frames to wait after loading a PLY before regenerating rest positions
 REST_REGEN_DELAY_FRAMES = 3
@@ -79,8 +80,9 @@ def onCook(scriptOp):
 	# currentSceneIdx: index into sceneFiles for the currently active scene
 	# preloaded: whether the next scene has been loaded into the inactive input
 	# regenCountdown: frames remaining before pulsing rest position regeneration
-	if not hasattr(scriptOp.storage, 'get') or scriptOp.storage.get('initialized') is None or scriptOp.storage.get('blending') is None:
-		scriptOp.storage['initialized'] = True
+	if scriptOp.storage.get('version') != STORAGE_VERSION:
+		scriptOp.storage.clear()
+		scriptOp.storage['version'] = STORAGE_VERSION
 		scriptOp.storage['activeInput'] = 0       # switch index 0 = pointfilein2
 		scriptOp.storage['currentSceneIdx'] = 0
 		scriptOp.storage['preloaded'] = False
@@ -88,6 +90,7 @@ def onCook(scriptOp):
 		scriptOp.storage['prevFraction'] = 0.0
 		scriptOp.storage['blending'] = False
 		scriptOp.storage['blendStartTime'] = 0.0
+		scriptOp.storage['blendReady'] = False  # must see fraction < 0.5 before first blend
 
 		# Load initial scenes
 		_loadScene(0, sceneFiles[0])
@@ -100,6 +103,7 @@ def onCook(scriptOp):
 	regenCountdown = scriptOp.storage['regenCountdown']
 	prevFraction = scriptOp.storage['prevFraction']
 	blending = scriptOp.storage['blending']
+	blendReady = scriptOp.storage.get('blendReady', False)
 	now = absTime.seconds
 
 	# --- Detect timer reset (fraction wrapped around) ---
@@ -110,6 +114,11 @@ def onCook(scriptOp):
 	if timerReset and not blending:
 		scriptOp.storage['preloaded'] = False
 		preloaded = False
+
+	# --- Arm the blend trigger after fraction passes through mid-cycle ---
+	if fraction < 0.5:
+		scriptOp.storage['blendReady'] = True
+		blendReady = True
 
 	# --- Preload next scene into inactive input (early in the cycle) ---
 	if not preloaded and not blending and fraction > 0.05:
@@ -129,9 +138,10 @@ def onCook(scriptOp):
 		_regenerateRestPositions()
 
 	# --- Start blend when timer is near the end (last 10% of cycle) ---
-	if not blending and fraction >= 0.9 and preloaded:
+	if not blending and blendReady and fraction >= 0.9 and preloaded:
 		scriptOp.storage['blending'] = True
 		scriptOp.storage['blendStartTime'] = now
+		scriptOp.storage['blendReady'] = False  # disarm until next mid-cycle
 		blending = True
 
 	# --- Compute switch index using wall-clock time for blend ---
