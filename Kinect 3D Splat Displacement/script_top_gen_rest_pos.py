@@ -32,7 +32,7 @@ def onCook(scriptOp):
 
 	pop = op('/GaussianSplatting/GaussianSplatPOP/null1')
 	positions = pop.points('P') # The splat's location
-	uniqueIDs = pop.points('uniqueID')
+	uniqueIDs = pop.points('uniqueID') # WHATEVER THE FUCK
 
 	texSize = 1024
 	numPoints = len(positions)
