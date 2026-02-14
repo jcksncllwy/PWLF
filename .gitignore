@@ -1,4 +1,5 @@
 # Gaussian splat files (large binary assets)
+assets/
 *.splat
 *.ply
 

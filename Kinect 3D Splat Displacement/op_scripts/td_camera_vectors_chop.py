@@ -14,7 +14,7 @@
 def onCook(scriptOp):
     scriptOp.clear()
 
-    cam = op('/GaussianSplatting/cameraViewport')  # render camera
+    cam = op('/GaussianSplatting/cam1')  # render camera
     camMat = cam.worldTransform  # world-from-camera matrix
 
     # Extract basis vectors (columns of worldTransform)

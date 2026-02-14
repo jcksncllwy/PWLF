@@ -1,0 +1,280 @@
+[02/07 17:14:32.823007][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:14:32.823185][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:14:32.823898][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:14:32.823936][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:14:32.824242][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:14:32.824585][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:14:32.824599][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:14:32.824651][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:14:33.904902][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:14:33.904955][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:14:34.982929][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:14:34.983579][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:14:34.984044][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:14:34.988410][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:14:34.988550][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:14:34.988928][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:14:34.988944][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:14:34.988950][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:14:34.991519][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:14:34.992023][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:14:51.762133][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:14:51.762198][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:14:51.762213][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:14:51.762223][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:14:51.762376][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:14:51.762509][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:14:51.762515][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:14:51.762633][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:14:52.837557][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:14:52.841860][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:14:53.914620][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:14:53.915392][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:14:53.915926][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:14:53.915953][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:14:53.916212][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:14:53.916224][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:14:53.916230][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:14:53.916235][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:14:53.919050][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:14:53.919546][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:14:57.343882][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:14:57.343965][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:14:57.343981][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:14:57.343991][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:14:57.344131][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:14:57.344251][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:14:57.344258][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:14:57.344376][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:14:58.415196][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:14:58.415255][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:14:59.488478][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:14:59.489077][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:14:59.489469][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:14:59.489489][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:14:59.489820][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:14:59.489833][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:14:59.489838][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:14:59.489844][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:14:59.493324][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:14:59.494046][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:14:59.508678][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:14:59.508754][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:14:59.508770][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:14:59.508780][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:14:59.508932][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:14:59.509020][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:14:59.509027][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:14:59.509056][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:15:00.583433][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:15:00.583517][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:15:01.658928][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:15:01.659598][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:15:01.660083][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:15:01.660113][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:15:01.660374][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:15:01.660386][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:15:01.660392][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:15:01.660397][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:15:01.663559][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:15:01.664160][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:15:49.728349][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:15:49.728420][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:15:49.728434][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:15:49.728445][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:15:49.728605][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:15:49.728706][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:15:49.728712][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:15:49.728808][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:15:50.803081][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:15:50.803133][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:15:51.878774][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:15:51.879677][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:15:51.880072][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:15:51.880108][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:15:51.880256][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:15:51.880268][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:15:51.880274][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:15:51.880279][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:15:51.881366][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:15:51.882020][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:16:22.266971][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:16:22.267095][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:16:22.267125][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:16:22.267147][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:16:22.267454][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:16:22.267749][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:16:22.267757][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:16:22.267903][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:16:23.343407][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:16:23.343492][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:16:24.416421][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:16:24.417293][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:16:24.417845][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:16:24.417877][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:16:24.418080][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:16:24.418097][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:16:24.418103][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:16:24.418109][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:16:24.420474][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:16:24.421012][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:16:24.439963][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:16:24.440019][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:16:24.440041][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:16:24.440055][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:16:24.440187][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:16:24.440255][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:16:24.440263][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:16:24.440340][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:16:25.514405][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:16:25.514448][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:16:26.588004][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:16:26.588982][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:16:26.589590][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:16:26.589667][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:16:26.590061][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:16:26.590076][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:16:26.590091][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:16:26.590096][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:16:26.591690][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:16:26.592239][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:17:17.302166][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:17:17.302239][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:17:17.302254][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:17:17.302266][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:17:17.302391][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:17:17.302607][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:17:17.302613][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:17:17.302710][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:17:18.377780][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:17:18.377837][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:17:19.455011][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:17:19.455879][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:17:19.456514][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:17:19.456538][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:17:19.457131][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:17:19.457180][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:17:19.457190][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:17:19.457211][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:17:19.461122][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:17:19.461913][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:17:19.475611][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:17:19.475669][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:17:19.475682][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:17:19.475691][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:17:19.475853][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:17:19.476047][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:17:19.476053][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:17:19.476231][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:17:20.555368][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:17:20.555414][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:17:21.632204][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:17:21.633968][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:17:21.634564][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:17:21.634589][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:17:21.635165][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:17:21.635177][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:17:21.635182][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:17:21.635188][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:17:21.638099][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:17:21.638817][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:17:39.120414][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:17:39.120511][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:17:39.120527][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:17:39.120546][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:17:39.120670][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:17:39.120854][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:17:39.120868][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:17:39.120998][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:17:40.195374][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:17:40.195421][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:17:41.271877][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:17:41.272702][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:17:41.273362][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:17:41.273404][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:17:41.273889][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:17:41.273914][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:17:41.273919][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:17:41.273926][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:17:41.276943][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:17:41.277923][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:17:41.292025][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:17:41.292080][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:17:41.292103][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:17:41.292112][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:17:41.292273][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:17:41.292457][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:17:41.292471][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:17:41.292596][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:17:42.365590][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:17:42.365636][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:17:43.436804][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:17:43.437555][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:17:43.438041][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:17:43.438063][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:17:43.438358][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:17:43.438370][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:17:43.438376][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:17:43.438384][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:17:43.439534][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:17:43.440118][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:17:43.441271][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:17:43.441324][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:17:43.441391][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:17:43.441416][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:17:43.441473][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:17:43.441555][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:17:43.441567][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:17:43.441633][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:17:44.516379][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:17:44.516424][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:17:45.589886][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:17:45.590497][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:17:45.590936][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:17:45.590957][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:17:45.591280][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:17:45.591299][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:17:45.591318][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:17:45.591331][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:17:45.593692][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:17:45.594240][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:18:04.850396][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:18:04.850463][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:18:04.850478][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:18:04.850487][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:18:04.850665][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:18:04.850804][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:18:04.850824][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:18:04.850920][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:18:05.919799][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:18:05.919878][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:18:06.993895][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:18:06.994682][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:18:06.995201][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:18:06.995222][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:18:06.995732][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:18:06.995745][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:18:06.995751][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:18:06.995756][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:18:06.998939][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:18:06.999657][info][8532][Context.cpp:84] Context destroyed
+[02/07 17:18:07.015102][debug][8532][Context.cpp:30] Context creating, work_dir=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes
+[02/07 17:18:07.015151][debug][8532][Context.cpp:49] Config file version=1.1
+[02/07 17:18:07.015164][debug][8532][FrameBufferManager.cpp:23] Max global frame buffer size updated! size=2048.000MB
+[02/07 17:18:07.015173][info][8532][Context.cpp:68] Context created with config: default config!
+[02/07 17:18:07.015345][info][8532][Context.cpp:73] Work directory=C:\Users\jcksn\Desktop\PWLF\Kinect 3D Splat Displacement\toxes, SDK version=v1.10.16-20241021-5113dad11
+[02/07 17:18:07.015589][debug][8532][DeviceManager.cpp:30] DeviceManager init ...
+[02/07 17:18:07.015600][info][8532][MfPal.cpp:105] createObPal: create WinPal!
+[02/07 17:18:07.015701][debug][8532][MfPal.cpp:110] WmfPal init ...
+[02/07 17:18:08.091110][debug][8532][MfPal.cpp:117] WmfPal created!
+[02/07 17:18:08.091158][debug][8532][DeviceManager.cpp:34] Enable USB Device Enumerator ...
+[02/07 17:18:09.167608][debug][8532][EnumeratorLibusb.cpp:324] queryDevicesInfo done!
+[02/07 17:18:09.168339][debug][8532][MfPal.cpp:219] Create WinEventDeviceWatcher!
+[02/07 17:18:09.168766][debug][8532][UsbDeviceEnumerator.cpp:78] No matched usb device found!
+[02/07 17:18:09.168787][info][8532][DeviceManager.cpp:15] Current found device(s): (0)
+[02/07 17:18:09.169212][debug][8532][DeviceManager.cpp:52] DeviceManager construct done!
+[02/07 17:18:09.169224][debug][8532][Context.cpp:81] Context destroying ...
+[02/07 17:18:09.169230][debug][8532][DeviceManager.cpp:56] DeviceManager destroy ...
+[02/07 17:18:09.169235][debug][8532][DeviceManager.cpp:64] DeviceManager Destructors done
+[02/07 17:18:09.172413][debug][8532][MfPal.cpp:128] WmfPal destroyed!
+[02/07 17:18:09.173059][info][8532][Context.cpp:84] Context destroyed

@@ -27,10 +27,23 @@ uniform float uDamping;		// velocity decay per frame, 0-1 (try 0.8 - 0.95)
 uniform float uDeltaTime;		// time step in seconds (0.016 for 60fps)
 uniform float uDepthFalloff;	// depth weighting curve (try 2.0 - 5.0)
 uniform float uMaxOffset;		// safety clamp to prevent splats flying to infinity (try 5.0 - 20.0)
+uniform float uNoiseAmount;	// per-splat force scatter, 0-1 (try 0.2 - 0.5)
+uniform float uNoiseSpeed;		// how fast noise evolves over time (try 0.5 - 2.0)
+uniform float uTime;			// elapsed time in seconds (bind to absTime.seconds)
+uniform vec3 uSceneCenter;		// bounding sphere center (world space, from bounds.json)
+uniform float uMaxDisplaceRadius;	// max distance from scene center for displacement (0 = unlimited)
 
 // MRT output: set "Number of Color Buffers" to 2 on the GLSL TOP
 // Buffer 0 = offset, Buffer 1 = velocity
 layout(location = 0) out vec4 fragColor[TD_NUM_COLOR_BUFFERS];
+
+// Hash-based noise (per-splat, time-varying)
+vec3 hash3(vec3 p) {
+	p = vec3(dot(p, vec3(127.1, 311.7, 74.7)),
+	         dot(p, vec3(269.5, 183.3, 246.1)),
+	         dot(p, vec3(113.5, 271.9, 124.6)));
+	return fract(sin(p) * 43758.5453) * 2.0 - 1.0;
+}
 
 // Rotation matrix from Euler angles (degrees) in ZYX order
 mat3 rotateZYX(vec3 angles) {
@@ -73,9 +86,11 @@ void main()
 
 	// Sample Kinect flow and compute world-space force
 	vec3 force = vec3(0.0);
-	if (all(greaterThanEqual(displaceUV, vec2(0.0))) &&
-		all(lessThanEqual(displaceUV, vec2(1.0))) &&
-		displaceClipPos.w > 0.0)
+	float uvMargin = 0.15;  // catch large splats whose centers are just off-screen
+	if (all(greaterThanEqual(displaceUV, vec2(-uvMargin))) &&
+		all(lessThanEqual(displaceUV, vec2(1.0 + uvMargin))) &&
+		displaceClipPos.w > 0.0 &&
+		(uMaxDisplaceRadius <= 0.0 || length(restPos - uSceneCenter) < uMaxDisplaceRadius))
 	{
 		vec3 displaceSample = texture(sTD2DInputs[2], displaceUV).rgb;
 		vec2 flow = displaceSample.xy;
@@ -83,7 +98,12 @@ void main()
 		float depthWeight = exp(-depth * uDepthFalloff);
 
 		// Convert 2D camera-plane flow to 3D world-space force
-		force = (uCamRight * flow.x + uCamUp * flow.y) * uForceStrength * depthWeight;
+		force = (uCamRight * flow.x + uCamUp * flow.y) * uForceStrength;
+
+		// Per-splat noise to scatter trajectories (scales with flow magnitude)
+		float flowMag = length(flow);
+		vec3 noise = hash3(vec3(uv * 1024.0, uTime * uNoiseSpeed));
+		force += noise * flowMag * uForceStrength * uNoiseAmount;
 	}
 
 	// Physics integration (all in world space)
